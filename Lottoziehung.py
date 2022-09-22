@@ -13,7 +13,7 @@ selection = init(45)
 def randomizer():
     i = 1
     while i < 7:
-        value = random.randint(0,len(selection)-1)
+        value = random.randint(0,len(selection)-i)
         selection[value], selection[len(selection)-i] = selection[len(selection)-i], selection[value]
         dict[value+1] += 1
         i = i + 1
