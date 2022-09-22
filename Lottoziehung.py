@@ -10,12 +10,15 @@ def init(x):
 dict = {}
 selection = init(45)
 
+def statistik(value):
+    dict[value+1] += 1
+
 def randomizer():
     i = 1
     while i < 7:
         value = random.randint(0,len(selection)-i)
         selection[value], selection[len(selection)-i] = selection[len(selection)-i], selection[value]
-        dict[value+1] += 1
+        statistik(value)
         i = i + 1
 
 if __name__ == "__main__":
