@@ -20,7 +20,7 @@ def randomizer():
 
 if __name__ == "__main__":
     cnt = 1
-    while cnt < 100:
+    while cnt < 1000:
         randomizer()
         cnt = cnt + 1
     print(dict)
