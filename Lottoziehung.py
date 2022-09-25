@@ -16,7 +16,7 @@ def statistik(value):
 def randomizer():
     i = 1
     while i < 7:
-        value = random.randint(0,len(selection)-i)
+        value = random.randint(1,len(selection)-i)
         selection[value], selection[len(selection)-i] = selection[len(selection)-i], selection[value]
         statistik(value)
         i = i + 1
