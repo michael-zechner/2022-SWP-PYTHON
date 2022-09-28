@@ -8,9 +8,6 @@ def init(start,stop):
         dict[i] = 0
     return selection
 
-dict = {}
-selection = []
-
 def statistik(value):
     dict[value+1] += 1
 
@@ -23,6 +20,8 @@ def randomizer(cnt):
         i = i + 1
 
 if __name__ == "__main__":
+    dict = {}
+    selection = []
     selection = init(1,45)
     for i in range(1000):
         randomizer(6)
