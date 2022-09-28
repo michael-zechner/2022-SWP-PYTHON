@@ -7,7 +7,7 @@ def init(start,stop):
         dict[i] = 0
     return selection
 
-def statistik(value):
+def statistic(value):
     dict[value+1] += 1
 
 def randomizer(cnt):
@@ -15,7 +15,7 @@ def randomizer(cnt):
     while i <= cnt:
         value = random.randint(0,len(selection)-i)
         selection[value], selection[len(selection)-i] = selection[len(selection)-i], selection[value]
-        statistik(value)
+        statistic(value)
         i = i + 1
 
 if __name__ == "__main__":
