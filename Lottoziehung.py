@@ -1,5 +1,4 @@
 import random
-from select import select
 
 def init(start,stop):
     selection = []
