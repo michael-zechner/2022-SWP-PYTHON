@@ -1,6 +1,4 @@
-from calendar import c
 from random import randrange
-from this import d
 from model import Card
 from collections import Counter
 from copy import deepcopy
