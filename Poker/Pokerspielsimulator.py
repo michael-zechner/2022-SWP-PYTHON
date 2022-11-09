@@ -2,7 +2,6 @@ from random import randrange
 from model import Card
 from collections import Counter
 from copy import deepcopy
-import numpy as np
 
 def init():
     for i in range(0,4):
