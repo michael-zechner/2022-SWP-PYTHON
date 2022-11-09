@@ -128,6 +128,7 @@ def valuation():
 
 if __name__ == "__main__":
     howoften = 1000000
+    howmanycards = 5
     cards = []
     draw_cards = []
     draw_color = []
@@ -146,8 +147,11 @@ if __name__ == "__main__":
     }
     init()
     for i in range(howoften):
-        getRandCards(5)
+        getRandCards(howmanycards)
         valuation()
-    print('Stat:')
+    print("Gezogene Karten: " + str(howmanycards))
+    print("Wie viel Ziehungen: " + str(howoften))
+    print('-------------------------------------')
+    print('Statistik:')
     stats = {key: (value / howoften)*100 for key, value in stats.items()}
     print(stats)
