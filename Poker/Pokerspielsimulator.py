@@ -34,21 +34,21 @@ def highestCard():
 
 def pair():
     counts = dict(Counter(draw_symbol))
-    duplicates = {key:value for key, value in counts.items() if value > 1}
+    duplicates = {key:value for key, value in counts.items() if value == 2}
     if len(duplicates) == 1:
         return True
     return False
 
 def twoPairs():
     counts = dict(Counter(draw_symbol))
-    duplicates = {key:value for key, value in counts.items() if value > 1}
+    duplicates = {key:value for key, value in counts.items() if value == 2}
     if len(duplicates) == 2:
         return True
     return False
 
 def drilling():
     counts = dict(Counter(draw_symbol))
-    duplicates = {key:value for key, value in counts.items() if value > 2}
+    duplicates = {key:value for key, value in counts.items() if value == 3}
     if len(duplicates) == 1:
         return True
     return False
@@ -66,19 +66,20 @@ def straight():
 
 def flush():
     counts = dict(Counter(draw_color))
-    duplicates = {key:value for key, value in counts.items() if value > 4}
+    duplicates = {key:value for key, value in counts.items() if value == 5}
     if len(duplicates) == 1:
         return True
     return False
 
 def fullHouse():
-    if twoPairs() and drilling():
+    if drilling():
+        if pair():
             return True
     return False
 
 def fourofakind():
     counts = dict(Counter(draw_symbol))
-    four = {key:value for key, value in counts.items() if value > 3} 
+    four = {key:value for key, value in counts.items() if value == 4} 
     if len(four) > 0:
         return True
     else: 
