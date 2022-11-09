@@ -10,12 +10,12 @@ def init():
             c = Card(i,j)
             cards.append(c)
 
-def getRandCards():
+def getRandCards(cnt):
     draw_cards.clear()
     draw_color.clear()
     draw_symbol.clear()
     length = len(cards)-1
-    for i in range(5):
+    for i in range(cnt):
         index = randrange(length-i)
         value = cards[index]
         draw_cards.append(value)
@@ -25,10 +25,10 @@ def getRandCards():
 
 def highestCard():
     value = 0
-    highest_card = max(draw_cards, key=lambda x:x.symbol)
+    highest_card = max(draw_symbol)
     value = highest_card
-    lowest_card = min(draw_cards, key=lambda x:x.symbol)
-    if lowest_card.symbol == 1:
+    lowest_card = min(draw_symbol)
+    if lowest_card == 1:
         value = lowest_card
     return True
 
@@ -72,8 +72,7 @@ def flush():
     return False
 
 def fullHouse():
-    if drilling():
-        if pair():
+    if drilling() and pair():
             return True
     return False
 
@@ -148,7 +147,7 @@ if __name__ == "__main__":
     }
     init()
     for i in range(howoften):
-        getRandCards()
+        getRandCards(5)
         valuation()
     print('Stat:')
     stats = {key: (value / howoften)*100 for key, value in stats.items()}
