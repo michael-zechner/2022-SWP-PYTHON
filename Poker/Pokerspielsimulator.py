@@ -106,13 +106,13 @@ def royaleFlush():
 
 def valuation():
     if royaleFlush():
-        stats["royal Flush"] += 1
+        stats["Royal-Flush"] += 1
     elif straightFlush():
-        stats["straight Flush"] += 1
+        stats["Straight-Flush"] += 1
     elif fourofakind():
-        stats["four of a kind"] += 1
+        stats["Four-of-a-Kind"] += 1
     elif fullHouse():
-        stats["full House"] += 1
+        stats["Full-House"] += 1
     elif flush():
         stats["Flush"] += 1
     elif straight():
@@ -120,38 +120,42 @@ def valuation():
     elif drilling():
         stats["Drilling"] += 1
     elif twoPairs():
-        stats["two Pairs"] += 1
+        stats["Two-Pairs"] += 1
     elif pair():
         stats["Pair"] += 1
     elif highestCard():
-        stats["highest Card"] += 1
+        stats["Highest-Card"] += 1
 
 if __name__ == "__main__":
-    howoften = 1000000
-    howmanycards = 5
+    howoften = int(input("Wie oft soll gezogen werden? "))
+    howmanycards = int(input("Wie viel Karten sollen gezogen werden? "))
     cards = []
     draw_cards = []
     draw_color = []
     draw_symbol = []
     stats = {
-        "highest Card" : 0.0,
+        "Highest-Card" : 0.0,
         "Pair" : 0.0,
-        "two Pairs" : 0.0,
+        "Two-Pairs" : 0.0,
         "Drilling" : 0.0,
         "Straight" : 0.0,
         "Flush" : 0.0,
-        "full House" : 0.0,
-        "four of a kind" : 0.0,
-        "straight Flush" : 0.0,
-        "royal Flush" : 0.0,
+        "Full-House" : 0.0,
+        "Four-of-a-Kind" : 0.0,
+        "Straight-Flush" : 0.0,
+        "Royal-Flush" : 0.0,
     }
     init()
     for i in range(howoften):
         getRandCards(howmanycards)
         valuation()
+    print('')
     print("Gezogene Karten: " + str(howmanycards))
     print("Wie viel Ziehungen: " + str(howoften))
     print('-------------------------------------')
     print('Statistik:')
-    stats = {key: (value / howoften)*100 for key, value in stats.items()}
-    print(stats)
+    print('')
+    print("{:<15} {:<7}".format('Kombination', 'Wahrscheinlichkeit'))
+    stats = {key: round((value / howoften)*100,4) for key, value in stats.items()}
+    for key, value in stats.items():
+        print("{:<15} {:<7}%".format(key,value))
