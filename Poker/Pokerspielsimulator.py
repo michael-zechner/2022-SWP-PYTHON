@@ -4,15 +4,17 @@ from collections import Counter
 from copy import deepcopy
 
 def init():
+    cards = []
     for i in range(0,4):
         for j in range(1,14):
             c = Card(i,j)
             cards.append(c)
+    return cards
 
 def getRandCards(cnt):
-    draw_cards.clear()
-    draw_color.clear()
-    draw_symbol.clear()
+    draw_cards = []
+    draw_color = []
+    draw_symbol = []
     length = len(cards)-1
     for i in range(cnt):
         index = randrange(length-i)
@@ -21,6 +23,7 @@ def getRandCards(cnt):
         draw_color.append(value.color)
         draw_symbol.append(value.symbol)
         cards[index], cards[length-i] = cards[length-i], value
+    return draw_cards, draw_color, draw_symbol    
 
 def highestCard():
     value = 0
@@ -129,10 +132,6 @@ def valuation():
 if __name__ == "__main__":
     howoften = int(input("Wie oft soll gezogen werden? "))
     howmanycards = int(input("Wie viel Karten sollen gezogen werden? "))
-    cards = []
-    draw_cards = []
-    draw_color = []
-    draw_symbol = []
     stats = {
         "Highest-Card" : 0.0,
         "Pair" : 0.0,
@@ -145,17 +144,23 @@ if __name__ == "__main__":
         "Straight-Flush" : 0.0,
         "Royal-Flush" : 0.0,
     }
-    init()
+    cards = init()
     for i in range(howoften):
-        getRandCards(howmanycards)
+        draw_cards, draw_color, draw_symbol = getRandCards(howmanycards)
         valuation()
+    file = open("Poker/wikipedia.txt", "r")
+    data = list(map(float, file.read().split("\n")))
+    file.close()
     print('')
     print("Gezogene Karten: " + str(howmanycards))
     print("Wie viel Ziehungen: " + str(howoften))
     print('-------------------------------------')
     print('Statistik:')
     print('')
-    print("{:<15} {:<7}".format('Kombination', 'Wahrscheinlichkeit'))
+    print("{:<15} {:<20} {:<12} {:<10}".format('Kombination', 'Wahrscheinlichkeit', 'Wikipedia', 'Abweichung'))
     stats = {key: round((value / howoften)*100,4) for key, value in stats.items()}
+    cnt = 0
     for key, value in stats.items():
-        print("{:<15} {:<7}%".format(key,value))
+        diff = round(abs(data[cnt] - value),4)
+        print("{:<15} {:<7}% {:<11} {:<8}% {:<2} {:<7}%".format(key,value,"",data[cnt],"", diff))
+        cnt+=1
