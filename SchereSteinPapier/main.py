@@ -18,7 +18,6 @@ def save_to_db():
         data.append(val)
     cursor.execute(stmt,data)
     connection.commit()
-    pass
 
 def init():
     user_stats = {
