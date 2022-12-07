@@ -6,7 +6,8 @@ def init_db():
     connection = sqlite3.connect('SchereSteinPapier/stats.db')
     cursor = connection.cursor()
     cursor.execute('''CREATE TABLE IF NOT EXISTS Stats
-              (Name Text, Win INT, Draw INT, Lose INT, Rock INT, Spok INT, Paper INT, Lizzard INT, Siccors INT)''')
+              (Name Text, Win INT, Draw INT, Lose INT, Rock INT,''' +
+            '''Spok INT, Paper INT, Lizzard INT, Siccors INT)''')
     return connection, cursor
 
 def save_to_db():
@@ -65,16 +66,19 @@ def play(name):
     count(user_result(result),user_choice)
     save_to_db()
     print('Result: ' + who_is_winner(result,name))
-    print(user_stats)
 
 if __name__ == "__main__":
     symbols, user_stats = init()
     connection, cursor = init_db()
-    menu = input("Chose a menu point:\n- Game (1)\n- Statistic (2)\n- Statistics for you (3)\n\n")
+    menu = input("Chose a menu point:\n- Game (1)\n- Statistic (2)\n- Analyse (3)\n\n")
     if menu == "1":
         name = input("What is your name?\n")
         play(name)
     elif menu == "2":
         print(pd.read_sql_query("SELECT * FROM Stats", connection))
-    # elif menu == "3":
-    #     print(pd.read_sql_query("SELECT * FROM Stats WHERE Name=" + name, connection))
+    elif menu == "3":
+        name = input("What is your name?\n")
+        print(pd.read_sql_query("SELECT Name,SUM(Win) as Wins, SUM(Draw) as Draws,"+
+        "SUM(Lose) as Loses, SUM(Rock) as Rock, SUM(Spok) as Spok, Sum(Paper) as Paper,"+
+        "Sum(Lizzard) as Lizzard, SUM(Siccors) as Siccors "+
+        "FROM Stats WHERE Name='" + name + "'", connection))
