@@ -77,7 +77,9 @@ if __name__ == "__main__":
     elif menu == "2":
         print(pd.read_sql_query("SELECT * FROM Stats", connection))
     elif menu == "3":
-        name = input("What is your name?\n")
+        print("Namen in der DB:\n")
+        print(pd.read_sql_query("SELECT DISTINCT(Name) From Stats", connection))
+        name = input("\nWhat is your name?\n")
         print(pd.read_sql_query("SELECT Name,SUM(Win) as Wins, SUM(Draw) as Draws,"+
         "SUM(Lose) as Loses, SUM(Rock) as Rock, SUM(Spok) as Spok, Sum(Paper) as Paper,"+
         "Sum(Lizzard) as Lizzard, SUM(Siccors) as Siccors "+
