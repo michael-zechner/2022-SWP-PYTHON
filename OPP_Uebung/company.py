@@ -47,7 +47,7 @@ class Company:
         percent_w = round((cnt_w / len(all_emp))*100,2)
         percent_m = round((cnt_m / len(all_emp))*100,2)
 
-        return "Frauenanteil: " + str(percent_w) + "%\n" + "Männeranteil: " + str(percent_m) + "%"
+        return percent_m, percent_w
 
     def print_department(self):
         for d in self.departments:

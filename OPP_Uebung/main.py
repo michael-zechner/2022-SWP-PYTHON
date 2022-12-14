@@ -4,6 +4,9 @@ from groupleader import GroupLeader
 from department import Department
 from company import Company
 from gender import Gender
+from matplotlib import pyplot as plt  
+import numpy as np
+
 
 def init():
     p = Person("Michael","Zechner","11-06-2004","m")
@@ -45,8 +48,9 @@ def choice(c):
     "- Wie viel Abteilungen gibt es (3)\n" +
     "- Welche Abteilungen hat die Meisten Mitarbeiter (4)\n" +
     "- Prozentualer Männer- und Frauenanteil (5)\n" +
-    "- Abteilungen ausgeben (6)\n" +
-    "- Gruppenleiter ausgeben und deren Mitarbeiter (7)\n\n")
+    "- Grafik zu Männer- und Frauenanteil (6)\n"
+    "- Abteilungen ausgeben (7)\n" +
+    "- Gruppenleiter ausgeben und deren Mitarbeiter (8)\n\n")
     
     print("\n")
     if menu == "1":
@@ -60,8 +64,10 @@ def choice(c):
     elif menu == "5":
         print(c.percent_m_w())
     elif menu == "6":
-        c.print_department()
+        chart(c)
     elif menu == "7":
+        c.print_department()
+    elif menu == "8":
         c.print_dep_groupleader()
 
     back = str(input("Nochmal (Y/N)\n"))
@@ -70,7 +76,13 @@ def choice(c):
     elif back == "N":
         print("Servus!")
 
+def chart(c):
+    m,w = c.percent_m_w()
+    percent = [m,w]
+    names = ["Männer", "Frauen"]
+    plt.pie(percent,labels=names,autopct='%1.2f%%')
+    plt.show()
+
 if __name__ == "__main__":
     c = init()
     choice(c)
-    
