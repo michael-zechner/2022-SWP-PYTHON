@@ -50,7 +50,8 @@ def choice(c):
     "- Prozentualer Männer- und Frauenanteil (5)\n" +
     "- Grafik zu Männer- und Frauenanteil (6)\n"
     "- Abteilungen ausgeben (7)\n" +
-    "- Gruppenleiter ausgeben und deren Mitarbeiter (8)\n\n")
+    "- Gruppenleiter ausgeben und deren Mitarbeiter (8)\n" +
+    "- Hinzufügen durch Konsoleneingabe (9)\n\n")
     
     print("\n")
     if menu == "1":
@@ -69,6 +70,8 @@ def choice(c):
         c.print_department()
     elif menu == "8":
         c.print_dep_groupleader()
+    elif menu == "9":
+        print("Tut mir Leid ist noch in der Entwicklungsphase!")
 
     back = str(input("Nochmal (Y/N)\n"))
     if back == "Y":
