@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="tableFixHead">
+            <table id="table" class="display">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Win</th>
+                        <th>Draw</th>
+                        <th>Lose</th>
+                        <th>Rock</th>
+                        <th>Spok</th>
+                        <th>Paper</th>
+                        <th>Lizzard</th>
+                        <th>Siccors</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in stats %}
+                    <tr>
+                        <td>{{s[0]}}</td>
+                        <td>{{s[1]}}</td>
+                        <td>{{s[2]}}</td>
+                        <td>{{s[3]}}</td>
+                        <td>{{s[4]}}</td>
+                        <td>{{s[5]}}</td>
+                        <td>{{s[6]}}</td>
+                        <td>{{s[7]}}</td>
+                        <td>{{s[8]}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+        
+            </table>
+        </div>
+        <a type="button" href="/" class="btn btn-info">Back</a>
+    </body>
+</html>
+
+<style>
+    *{
+        margin: 10px;
+    }
+
+    .tableFixHead{
+        overflow-y: auto;
+        height: 80%;
+    }
+
+    .tableFixHead thead th{
+        position: sticky;
+        top: 0
+    }
+
+    table{
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 80%;
+        border: 1px solid #ddd;
+    }
+
+    td, th{
+        text-align: left;
+        padding: 5px;
+    }
+    th{
+        background-color: #eee;
+    }
+    tr:nth-child(even){background-color: f2f2f2;}
+</style>
