@@ -1,7 +1,7 @@
 from random import randint, choice
 import sqlite3
 import pandas as pd
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 import webbrowser
 import requests
 from matplotlib import pyplot as plt  
@@ -18,8 +18,18 @@ def game():
 
 @app.route('/game/<int:code>')
 def solve_game(code=-1):
-    user_choice, com_choice, result = web_play('WebUser',code)
+    user_choice, com_choice, result = web_play("WebUser",code)
     return render_template('after_game.html',user=user_choice,com=com_choice,result=result)
+
+# @app.route('/name')
+# def name():
+#     return render_template('game_name.html')
+
+# @app.route('/name',methods = ['POST', 'GET'])
+# def login():
+#    if request.method == 'POST':
+#       user = request.form['nm']
+#       return redirect(url_for('game'))
 
 @app.route('/statistic')
 def statistic():
@@ -252,6 +262,7 @@ def pie():
     plt.show()
 
 if __name__ == "__main__":
+    used_web_name = ""
     host = 'http://127.0.0.1:5000/handling/'
     symbols, user_stats = init()
     connection, cursor = init_db()
