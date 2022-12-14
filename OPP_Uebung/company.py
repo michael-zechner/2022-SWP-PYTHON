@@ -39,7 +39,7 @@ class Company:
         cnt_w = 0
 
         for e in all_emp:
-            if e.gender.name == "w":
+            if e.gender == "w":
                 cnt_w+=1
             else:
                 cnt_m+=1

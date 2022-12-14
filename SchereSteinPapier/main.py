@@ -28,9 +28,13 @@ def statistic():
 
 @app.route('/analyse')
 def analyse():
-    text = "Michael"
-    stats = ret_stats_name(text)
+    stats = ret_stats_name()
     return render_template('analyse.html', stats=stats)
+
+@app.route('/stats')
+def web_stats():
+    pie()
+    return render_template('index.html')
 
 def list_to_json(l1,l2):
     js = {}
@@ -169,7 +173,7 @@ def ret_stats():
     stats = cursor.fetchall()
     return stats
 
-def ret_stats_name(name):
+def ret_stats_name():
     connection = sqlite3.connect('SchereSteinPapier/stats.db')
     cursor = connection.cursor()
     cursor.execute("SELECT Name,SUM(Win) as Wins, SUM(Draw) as Draws,"+
@@ -179,8 +183,11 @@ def ret_stats_name(name):
     stats = cursor.fetchall()
     return stats
 
+def highscore():
+    print(pd.read_sql_query("SELECT Name, SUM(Win) as Wins FROM Stats GROUP BY Name ORDER BY Wins DESC ", connection))
+
 def console():
-    menu = input("Choose a menu point:\n- Back to First Menu (0)\n- Game (1)\n- Statistic (2)\n- Analyse (3)\n- Upload(4)\n- Piechart (5)\n\n")
+    menu = input("Choose a menu point:\n- Back to First Menu (0)\n- Game (1)\n- Statistic (2)\n- Analyse (3)\n- Upload(4)\n- Piechart (5)\n- Hightscore (6)\n\n")
     if menu == "0":
         start()
     elif menu == "1":
@@ -207,6 +214,8 @@ def console():
         upload(name)
     elif menu == "5":
         pie()
+    elif menu == "6":
+        highscore()
     back = str(input("Do you wanna go back to Menu (Y/N)?\n"))
     if back == "Y":
         console()
@@ -222,6 +231,8 @@ def start():
         console()
 
 def pie():
+    connection = sqlite3.connect('SchereSteinPapier/stats.db')
+    cursor = connection.cursor()
     percent = []
     names = []
     cursor.execute("SELECT SUM(WIN) FROM Stats")
