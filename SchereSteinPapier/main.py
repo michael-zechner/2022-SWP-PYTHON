@@ -21,16 +21,6 @@ def solve_game(code=-1):
     user_choice, com_choice, result = web_play("WebUser",code)
     return render_template('after_game.html',user=user_choice,com=com_choice,result=result)
 
-# @app.route('/name')
-# def name():
-#     return render_template('game_name.html')
-
-# @app.route('/name',methods = ['POST', 'GET'])
-# def login():
-#    if request.method == 'POST':
-#       user = request.form['nm']
-#       return redirect(url_for('game'))
-
 @app.route('/statistic')
 def statistic():
     stats = ret_stats()
@@ -45,12 +35,6 @@ def analyse():
 def web_stats():
     pie()
     return render_template('index.html')
-
-def list_to_json(l1,l2):
-    js = {}
-    for i in range(len(l1)):
-        js[l1[i]] = l2[i]
-    return js
 
 def init_db():
     connection = sqlite3.connect('SchereSteinPapier/stats.db')
@@ -106,7 +90,6 @@ def user_result(value):
 def count(result, user):
     user_stats[result] += 1
     user_stats[user] += 1
-    pass
 
 def play(name):
     user_choice = input("Type in your input (Rock,Paper,Siccors,Lizzard,Spok)\n")
@@ -233,7 +216,8 @@ def console():
         print("Thank you for playing!!")
 
 def start():
-    which_mode = input("Choose if you want to play on Webpage (1) or in Console (2)?\nUpload Data is only in Console possible because there is a port issue!\n")
+    which_mode = input("Choose if you want to play on Webpage (1) or in Console (2)?\n"
+    +"Upload Data is only in Console possible because there is a port issue!\n")
     if which_mode == "1":
         webbrowser.open('http://127.0.0.1:5000', new=1, autoraise=True)
         app.run()
@@ -257,7 +241,7 @@ def pie():
         names.append(i[0])
 
     fig = plt.figure(figsize=(10,7))
-    plt.pie(percent,labels=names)
+    plt.pie(percent,labels=names,autopct='%1.2f%%')
     plt.title("Most Wins!")
     plt.show()
 
