@@ -8,7 +8,6 @@ In diesem Projekt sind alle Aufgaben des SWP-Unterrichts-Python enthalten.
 
 # OPP_Uebung
 
-* [__pycache__/](./OPP_Uebung/__pycache__)
 * [company.py](./OPP_Uebung/company.py)
 * [department.py](./OPP_Uebung/department.py)
 * [employee.py](./OPP_Uebung/employee.py)
@@ -19,7 +18,6 @@ In diesem Projekt sind alle Aufgaben des SWP-Unterrichts-Python enthalten.
 
 # Poker
 
-* [__pycache__/](./Poker/__pycache__)
 * [model.py](./Poker/model.py)
 * [Pokerspielsimulator.py](./Poker/Pokerspielsimulator.py)
 * [wikipedia.txt](./Poker/wikipedia.txt)
