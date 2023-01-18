@@ -2,6 +2,7 @@
 
 In diesem Projekt sind alle Aufgaben des SWP-Unterrichts-Python enthalten.
 
+'''bash
 C:.
 │   README.md
 │
@@ -55,3 +56,4 @@ C:.
         --.txt
         m.py
         main.py
+'''
