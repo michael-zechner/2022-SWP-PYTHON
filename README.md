@@ -39,6 +39,4 @@ In diesem Projekt sind alle Aufgaben des SWP-Unterrichts-Python enthalten.
 
 # Verkettete_Listen
 
-* [--.txt](./Verkettete_Listen/--.txt)
-* [m.py](./Verkettete_Listen/m.py)
 * [main.py](./Verkettete_Listen/main.py)
