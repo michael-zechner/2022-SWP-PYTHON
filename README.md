@@ -1,6 +1,6 @@
 # 2022-SWP-PYTHON
 
-In diesem Projekt sind alle Aufgaben des SWP-Unterrichts-Python enthalten.
+In diesem Projekt sind alle Aufgaben des SWP-Unterrichts Python & Java enthalten.
 
 # Java_Aufgaben
 
