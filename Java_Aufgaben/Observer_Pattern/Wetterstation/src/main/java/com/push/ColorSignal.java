@@ -13,14 +13,14 @@ public class ColorSignal implements Observer {
         double newTemp = temp;
         double newHumidity = humidity;
         if (newTemp <= 30.0){
-            System.out.println("Green");
+            System.out.println("Temperatur im grünen Bereich");
         }else{
-            System.out.println("Red");
+            System.out.println("Temperatur im roten Bereich");
         }
         if (newHumidity <= 70.0){
-            System.out.println("Green\n");
+            System.out.println("Luffeuchtigkeit im grünen Bereich\n");
         }else{
-            System.out.println("Red\n");
+            System.out.println("Luffeuchtigkeit im roten Bereich\n");
         }
     }
 }
