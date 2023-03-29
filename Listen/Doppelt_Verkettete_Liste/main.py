@@ -125,19 +125,15 @@ class DoubleLinkedList():
             current_node = current_node.next
         raise ValueError("Data not found in list")
 
-
-    # def reverse(self):
-    #     temp = None
-    #     current = self.head
- 
-    #     while current is not None:
-    #         temp = current.prev
-    #         current.prev = current.next
-    #         current.next = temp
-    #         current = current.prev
- 
-    #     if temp is not None:
-    #         self.head = temp.prev
+    def reverse(self):
+        current_node = self.head
+        while current_node:
+            next_node = current_node.next
+            current_node.next = current_node.previous
+            current_node.previous = next_node
+            if not next_node:
+                self.head = current_node
+            current_node = next_node
 
     def sort(self):
         current = self.head
@@ -239,9 +235,8 @@ if __name__ == '__main__':
     l.append(7)
     l.insert(0,3)
     l.print_list()
-    x = l.copy()
-    print("-------")
-    x.print_list()
+    l.reverse()
+    l.print_list()
 
 
     # def remove_at(self, index):
