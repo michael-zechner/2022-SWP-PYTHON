@@ -4,7 +4,7 @@ public class App {
         Printer colorPrinter = new ColorPrinter();
 
         PrinterProxy printerProxy = new PrinterProxy(swPrinter);
-
+        printerProxy.print("This document is in SW!");
         printerProxy.switchTo(colorPrinter);
         printerProxy.print("This document is in color!");
     }
