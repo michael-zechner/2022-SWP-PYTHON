@@ -2,7 +2,7 @@
 
 In diesem Projekt sind alle Aufgaben des SWP-Unterrichts Python & Java enthalten.
 
-# Java_Aufgaben
+# Java_Aufgaben - Patterns
 
   ## Pizzeria (Factory)
 
