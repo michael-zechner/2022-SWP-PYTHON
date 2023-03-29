@@ -72,11 +72,11 @@ class DoubleLinkedList():
         raise ValueError
 
     def insert(self, index, data):
-        if index < 0 or index > self.length():
+        if index < 0 or index > self.length()():
             raise IndexError("Index out of range")
         if index == 0:
             self.prepend(data)
-        elif index == self.length:
+        elif index == self.length():
             self.append(data)
         else:
             new_node = Node(data)
@@ -87,14 +87,13 @@ class DoubleLinkedList():
             new_node.prev = current_node
             current_node.next.prev = new_node
             current_node.next = new_node
-            self.length += 1
 
     def pop(self, index=-1):
-        if self.length == 0:
+        if self.length() == 0:
             raise Exception("Cannot pop from empty list")
         if index < 0:
-            index += self.length
-        if index < 0 or index >= self.length:
+            index += self.length()
+        if index < 0 or index >= self.length():
             raise IndexError("Index out of range")
         curr = self.head
         for i in range(index):
@@ -108,7 +107,6 @@ class DoubleLinkedList():
         else:
             curr.prev.next = curr.next
             curr.next.prev = curr.prev
-        self.length -= 1
         return curr.obj
 
     def remove(self, data):
@@ -124,14 +122,13 @@ class DoubleLinkedList():
                 else:
                     current_node.prev.next = current_node.next
                     current_node.next.prev = current_node.prev
-                self.length -= 1
                 return
             current_node = current_node.next
         raise ValueError("Data not found in list")
 
 
     def reverse(self):
-        if self.length <= 1:
+        if self.length() <= 1:
             return
         curr = self.head
         while curr is not None:
@@ -244,13 +241,13 @@ if __name__ == '__main__':
 
 
     # def remove_at(self, index):
-    #     if index < 0 or index >= self.length:
+    #     if index < 0 or index >= self.length():
     #         raise IndexError("Index out of range")
     #     current_node = self.head
     #     if index == 0:
     #         self.head = current_node.next
     #         current_node.next.prev = None
-    #     elif index == self.length - 1:
+    #     elif index == self.length()() - 1:
     #         self.tail = self.tail.prev
     #         self.tail.next = None
     #     else:
@@ -258,4 +255,3 @@ if __name__ == '__main__':
     #             current_node = current_node.next
     #         current_node.prev.next = current_node.next
     #         current_node.next.prev = current_node.prev
-    #     self.length -= 1
