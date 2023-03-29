@@ -36,7 +36,7 @@ class DoubleLinkedList():
         new_list = DoubleLinkedList()
         current = self.head
         while current is not None:
-            new_node = Node(current.obj)
+            new_node = Node(current.obj[0])
             if new_list.head is None:
                 new_list.head = new_node
                 new_list.tail = new_node
@@ -44,7 +44,6 @@ class DoubleLinkedList():
                 new_node.prev = new_list.tail
                 new_list.tail.next = new_node
                 new_list.tail = new_node
-            new_list.length += 1
             current = current.next
         return new_list
 
@@ -52,7 +51,7 @@ class DoubleLinkedList():
         count = 0
         current = self.head
         while current is not None:
-            if current.obj == data:
+            if current.obj[0] == data:
                 count += 1
             current = current.next
         return count
@@ -65,14 +64,14 @@ class DoubleLinkedList():
         current_node = self.head
         index = 0
         while current_node:
-            if current_node.obj == data:
+            if current_node.obj[0] == data:
                 return index
             current_node = current_node.next
             index += 1
         raise ValueError
 
     def insert(self, index, data):
-        if index < 0 or index > self.length()():
+        if index < 0 or index > self.length():
             raise IndexError("Index out of range")
         if index == 0:
             self.prepend(data)
@@ -112,7 +111,7 @@ class DoubleLinkedList():
     def remove(self, data):
         current_node = self.head
         while current_node:
-            if current_node.obj == data:
+            if current_node.obj[0] == data:
                 if current_node.prev is None:
                     self.head = current_node.next
                     current_node.next.prev = None
@@ -127,14 +126,18 @@ class DoubleLinkedList():
         raise ValueError("Data not found in list")
 
 
-    def reverse(self):
-        if self.length() <= 1:
-            return
-        curr = self.head
-        while curr is not None:
-            curr.prev, curr.next = curr.next, curr.prev
-            curr = curr.prev
-        self.head, self.tail = self.tail, self.head
+    # def reverse(self):
+    #     temp = None
+    #     current = self.head
+ 
+    #     while current is not None:
+    #         temp = current.prev
+    #         current.prev = current.next
+    #         current.next = temp
+    #         current = current.prev
+ 
+    #     if temp is not None:
+    #         self.head = temp.prev
 
     def sort(self):
         current = self.head
@@ -179,7 +182,7 @@ class DoubleLinkedList():
                 if curr.obj > max_val:
                     max_val = curr.obj
                 curr = curr.next
-            return max_val
+            return max_val[0]
     
     def min(self):
         if self.head is None:
@@ -191,12 +194,12 @@ class DoubleLinkedList():
                 if curr.obj < min_val:
                     min_val = curr.obj
                 curr = curr.next
-            return min_val
+            return min_val[0]
 
     def contains_element(self,object):
         curr = self.head
         while curr is not None:
-            if curr.obj == object:
+            if curr.obj[0] == object:
                 return True
             curr = curr.next
         return False
@@ -205,15 +208,15 @@ class DoubleLinkedList():
         curr = self.head
         total = 0
         while curr is not None:
-            total += curr.obj
+            total += curr.obj[0]
             curr = curr.next
         return total
     
     def get_first_element(self):
-        return self.head.obj
+        return self.head.obj[0]
 
     def get_last_element(self):
-        return self.tail.obj
+        return self.tail.obj[0]
 
 
         
@@ -232,12 +235,13 @@ def fill_with_numbers(l,how_many,stop):
 
 if __name__ == '__main__':
     l = DoubleLinkedList()
-    l.append(7)
+    l.append(5)
     l.append(7)
     l.insert(0,3)
     l.print_list()
-
-
+    x = l.copy()
+    print("-------")
+    x.print_list()
 
 
     # def remove_at(self, index):
