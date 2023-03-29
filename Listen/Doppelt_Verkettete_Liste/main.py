@@ -18,26 +18,35 @@ class DoubleLinkedList():
             self.tail = newNode
             self.tail.next = None
             
-
+    def prepend(self, data):
+        new_node = Node(data)
+        if self.head == None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.next = self.head
+            self.head.prev = new_node
+            self.head = new_node
+        
     def clear(self):
         self.head = None
         self.tail = None
 
     def copy(self):
-        new_dll = DoubleLinkedList()
+        new_list = DoubleLinkedList()
         current = self.head
         while current is not None:
             new_node = Node(current.obj)
-            if new_dll.head is None:
-                new_dll.head = new_node
-                new_dll.tail = new_node
+            if new_list.head is None:
+                new_list.head = new_node
+                new_list.tail = new_node
             else:
-                new_node.prev = new_dll.tail
-                new_dll.tail.next = new_node
-                new_dll.tail = new_node
-            new_dll.length += 1
+                new_node.prev = new_list.tail
+                new_list.tail.next = new_node
+                new_list.tail = new_node
+            new_list.length += 1
             current = current.next
-        return new_dll
+        return new_list
 
     def count(self, data):
         count = 0
@@ -63,7 +72,7 @@ class DoubleLinkedList():
         raise ValueError
 
     def insert(self, index, data):
-        if index < 0 or index > self.length:
+        if index < 0 or index > self.length():
             raise IndexError("Index out of range")
         if index == 0:
             self.prepend(data)
@@ -204,10 +213,10 @@ class DoubleLinkedList():
         return total
     
     def get_first_element(self):
-        return self.head
+        return self.head.obj
 
     def get_last_element(self):
-        return self.tail
+        return self.tail.obj
 
 
         
@@ -227,14 +236,9 @@ def fill_with_numbers(l,how_many,stop):
 if __name__ == '__main__':
     l = DoubleLinkedList()
     l.append(7)
-    l.append(3)
-    l.append(2)
-    l.append(4)
-    l.append(9)
-    l.append(1)
-    l.sort()
+    l.append(7)
+    l.insert(0,3)
     l.print_list()
-
 
 
 
