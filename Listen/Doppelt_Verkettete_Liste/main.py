@@ -127,7 +127,7 @@ class DoubleLinkedList():
 
     def reverse(self):
         current_node = self.head
-        while current_node:
+        while current_node is not None:
             next_node = current_node.next
             current_node.next = current_node.previous
             current_node.previous = next_node
