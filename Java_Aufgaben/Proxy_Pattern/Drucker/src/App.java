@@ -1,12 +1,12 @@
 public class App {
     public static void main(String[] args) {
-        Printer swPrinter = new SWPrinter();
+        Printer bwPrinter = new BWPrinter();
         Printer colorPrinter = new ColorPrinter();
 
-        PrinterProxy printerProxy = new PrinterProxy(swPrinter);
-        printerProxy.print("This document is in SW!");
+        PrinterProxy printerProxy = new PrinterProxy(bwPrinter);
+        printerProxy.print("");
         printerProxy.switchTo(colorPrinter);
-        printerProxy.print("This document is in color!");
+        printerProxy.print("");
     }
 }
 
