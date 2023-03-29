@@ -24,12 +24,15 @@ Extra:
 
 class LinkedList():
     def __init__(self):
-        self.start_element = ListElement(0)
+        self.start_element = None
 
     def append(self,object):
         new_element = ListElement(object)
-        last_element = self.get_last_element()
-        last_element.next_element = new_element
+        if self.start_element == None:
+            self.start_element = new_element
+        else:
+            last_element = self.get_last_element()
+            last_element.next_element = new_element
 
     def clear(self):
         le = self.start_element
@@ -175,6 +178,8 @@ class LinkedList():
 
     def get_last_element(self):
         le = self.start_element
+        if le == None:
+            return le
         while le.next_element is not None:
             le = le.next_element
         return le
@@ -198,3 +203,4 @@ if __name__ == '__main__':
     fill_with_numbers(l,5,0,50)
     l.print_list()
     print('------------')
+    print(l.sum())

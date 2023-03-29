@@ -78,6 +78,19 @@ In diesem Projekt sind alle Aufgaben des SWP-Unterrichts Python & Java enthalten
     * [README.md](./Java_Aufgaben/Observer_Pattern/Wetterstation/README.md)
 
 
+# Listen
+
+* [Arraylist/](./Listen/Arraylist)
+  * [main.py](./Listen/Arraylist/main.py)
+* [Aufwand/](./Listen/Aufwand)
+  * [main.py](./Listen/Aufwand/main.py)
+  * [O(N).xlsx](./Listen/Aufwand/O(N).xlsx)
+* [Doppelt_Verkettete_Liste/](./Listen/Doppelt_Verkettete_Liste)
+  * [main.py](./Listen/Doppelt_Verkettete_Liste/main.py)
+* [Verkettete_Listen/](./Listen/Verkettete_Listen)
+  * [main.py](./Listen/Verkettete_Listen/main.py)
+
+
 
 # Lotto
 
@@ -114,6 +127,6 @@ In diesem Projekt sind alle Aufgaben des SWP-Unterrichts Python & Java enthalten
 * [stats.db](./SchereSteinPapier/stats.db)
 
 
-# Verkettete_Listen
 
-* [main.py](./Verkettete_Listen/main.py)
+
+
