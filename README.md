@@ -4,6 +4,8 @@ In diesem Projekt sind alle Aufgaben des SWP-Unterrichts Python & Java enthalten
 
 # Java_Aufgaben
 
+## Pizzeria
+
 * [Factory_Pattern/](./Java_Aufgaben/Factory_Pattern)
   * [Pizzeria/](./Java_Aufgaben/Factory_Pattern/Pizzeria)
     * [.vscode/](./Java_Aufgaben/Factory_Pattern/Pizzeria/.vscode)
@@ -34,6 +36,18 @@ In diesem Projekt sind alle Aufgaben des SWP-Unterrichts Python & Java enthalten
             * [RostockQuattroStagioni.java](./Java_Aufgaben/Factory_Pattern/Pizzeria/src/main/java/com/RostockQuattroStagioni.java)
             * [RostockSalami.java](./Java_Aufgaben/Factory_Pattern/Pizzeria/src/main/java/com/RostockSalami.java)
     * [README.md](./Java_Aufgaben/Factory_Pattern/Pizzeria/README.md)
+  * [Brief/](.\Factory_Pattern_2\Brief)
+    * [.vscode/](.\Factory_Pattern_2\Brief\.vscode)
+      * [settings.json](.\Factory_Pattern_2\Brief\.vscode\settings.json)
+    * [lib/](.\Factory_Pattern_2\Brief\lib)
+    * [src/](.\Factory_Pattern_2\Brief\src)
+      * [A4.java](.\Factory_Pattern_2\Brief\src\A4.java)
+      * [A5.java](.\Factory_Pattern_2\Brief\src\A5.java)
+      * [A6.java](.\Factory_Pattern_2\Brief\src\A6.java)
+      * [Envelope.java](.\Factory_Pattern_2\Brief\src\Envelope.java)
+      * [EnvelopeFactory.java](.\Factory_Pattern_2\Brief\src\EnvelopeFactory.java)
+      * [Main.java](.\Factory_Pattern_2\Brief\src\Main.java)
+    * [README.md](.\Factory_Pattern_2\Brief\README.md)
 * [Observer_Pattern/](./Java_Aufgaben/Observer_Pattern)
   * [Wetterstation/](./Java_Aufgaben/Observer_Pattern/Wetterstation)
     * [.vscode/](./Java_Aufgaben/Observer_Pattern/Wetterstation/.vscode)
