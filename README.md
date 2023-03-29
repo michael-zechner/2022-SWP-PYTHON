@@ -4,7 +4,7 @@ In diesem Projekt sind alle Aufgaben des SWP-Unterrichts Python & Java enthalten
 
 # Java_Aufgaben
 
-## Pizzeria
+## Pizzeria (Factory)
 
 * [Factory_Pattern/](./Java_Aufgaben/Factory_Pattern)
   * [Pizzeria/](./Java_Aufgaben/Factory_Pattern/Pizzeria)
@@ -36,6 +36,9 @@ In diesem Projekt sind alle Aufgaben des SWP-Unterrichts Python & Java enthalten
             * [RostockQuattroStagioni.java](./Java_Aufgaben/Factory_Pattern/Pizzeria/src/main/java/com/RostockQuattroStagioni.java)
             * [RostockSalami.java](./Java_Aufgaben/Factory_Pattern/Pizzeria/src/main/java/com/RostockSalami.java)
     * [README.md](./Java_Aufgaben/Factory_Pattern/Pizzeria/README.md)
+
+## Brief (Factory)
+
   * [Brief/](.\Factory_Pattern_2\Brief)
     * [.vscode/](.\Factory_Pattern_2\Brief\.vscode)
       * [settings.json](.\Factory_Pattern_2\Brief\.vscode\settings.json)
@@ -48,6 +51,9 @@ In diesem Projekt sind alle Aufgaben des SWP-Unterrichts Python & Java enthalten
       * [EnvelopeFactory.java](.\Factory_Pattern_2\Brief\src\EnvelopeFactory.java)
       * [Main.java](.\Factory_Pattern_2\Brief\src\Main.java)
     * [README.md](.\Factory_Pattern_2\Brief\README.md)
+
+## Wetterstation (Observer)
+
 * [Observer_Pattern/](./Java_Aufgaben/Observer_Pattern)
   * [Wetterstation/](./Java_Aufgaben/Observer_Pattern/Wetterstation)
     * [.vscode/](./Java_Aufgaben/Observer_Pattern/Wetterstation/.vscode)
@@ -89,6 +95,9 @@ In diesem Projekt sind alle Aufgaben des SWP-Unterrichts Python & Java enthalten
               * [Observer.java](./Java_Aufgaben/Observer_Pattern/Wetterstation/src/main/java/com/push/Observer.java)
               * [Screen.java](./Java_Aufgaben/Observer_Pattern/Wetterstation/src/main/java/com/push/Screen.java)
               * [WeahtherStation.java](./Java_Aufgaben/Observer_Pattern/Wetterstation/src/main/java/com/push/WeahtherStation.java)
+
+## Drucker (Proxy)
+
     * [Proxy_Pattern/](./Java_Aufgaben/Proxy_Pattern)
       * [Drucker/](./Java_Aufgaben/Proxy_Pattern/Drucker)
         * [.vscode/](./Java_Aufgaben/Proxy_Pattern/Drucker/.vscode)
