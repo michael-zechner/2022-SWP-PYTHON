@@ -75,6 +75,18 @@ In diesem Projekt sind alle Aufgaben des SWP-Unterrichts Python & Java enthalten
               * [Observer.java](./Java_Aufgaben/Observer_Pattern/Wetterstation/src/main/java/com/push/Observer.java)
               * [Screen.java](./Java_Aufgaben/Observer_Pattern/Wetterstation/src/main/java/com/push/Screen.java)
               * [WeahtherStation.java](./Java_Aufgaben/Observer_Pattern/Wetterstation/src/main/java/com/push/WeahtherStation.java)
+    * [Proxy_Pattern/](./Java_Aufgaben/Proxy_Pattern)
+      * [Drucker/](./Java_Aufgaben/Proxy_Pattern/Drucker)
+        * [.vscode/](./Java_Aufgaben/Proxy_Pattern/Drucker/.vscode)
+          * [settings.json](./Java_Aufgaben/Proxy_Pattern/Drucker/.vscode/settings.json)
+        * [lib/](./Java_Aufgaben/Proxy_Pattern/Drucker/lib)
+        * [src/](./Java_Aufgaben/Proxy_Pattern/Drucker/src)
+          * [App.java](./Java_Aufgaben/Proxy_Pattern/Drucker/src/App.java)
+          * [ColorPrinter.java](./Java_Aufgaben/Proxy_Pattern/Drucker/src/ColorPrinter.java)
+          * [Printer.java](./Java_Aufgaben/Proxy_Pattern/Drucker/src/Printer.java)
+          * [PrinterProxy.java](./Java_Aufgaben/Proxy_Pattern/Drucker/src/PrinterProxy.java)
+          * [SWPrinter.java](./Java_Aufgaben/Proxy_Pattern/Drucker/src/SWPrinter.java)
+        * [README.md](./Java_Aufgaben/Proxy_Pattern/Drucker/README.md)
     * [README.md](./Java_Aufgaben/Observer_Pattern/Wetterstation/README.md)
 
 
